@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import { a1 } from "../services/a";
+// import { a1 } from "../services/a";
 
+import {array} from "lodash";
 export type MyComponentProps = {
 
 }
@@ -11,7 +12,8 @@ export function MyComponent(props: MyComponentProps) {
 
 
     useEffect(() => {
-        a1();
+
+        console.log(array)
     }, []);
 
     return <div> the component</div>

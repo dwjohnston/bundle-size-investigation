@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 
 
-const NUM_MB = 2; 
+const NUM_MB = 0.1; 
 
 
 const lettersOfAlpha = 'abcdefghijklmnopqrstuvwxyz';
@@ -10,11 +10,11 @@ const allLetters = (lettersOfAlpha + lettersOfAlpha.toUpperCase()).split('');
 function generateLargeRandomString(numMegabytes = NUM_MB){
 
     let largeString = '';
-    for (let i = 0; i < numMegabytes; i++){
-        for (let j = 0; j < 1024 * 1024; j++){
-            largeString += allLetters[Math.floor(Math.random() * allLetters.length)];
-        }
+    const size = numMegabytes * 1024 * 1024;
+    while(largeString.length < size){
+       largeString += allLetters[Math.floor(Math.random() * allLetters.length)];
     }
+
 
     return `export function foo() {
       console.log("${largeString}"); 

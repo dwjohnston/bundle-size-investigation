@@ -1,4 +1,4 @@
-import {a1} from "./src/a";
+import {a1} from "./src/services/a"
 
 
 function main() {
