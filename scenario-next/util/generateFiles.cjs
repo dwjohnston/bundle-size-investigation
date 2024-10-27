@@ -28,7 +28,7 @@ function generateRandomString(size) {
 // Function to create files and directories
 function createStructure(numFiles, letters) {
     letters.forEach(letter => {
-        const dirPath = path.join('.', "src", "services", letter);
+        const dirPath = path.join('.', "services", letter);
         if (!fs.existsSync(dirPath)) {
             fs.mkdirSync(dirPath, { recursive: true });
         }
@@ -54,7 +54,7 @@ function createStructure(numFiles, letters) {
                 `;
             }
             else {
-                 fileContent = `import {${importFrom}1,${importFrom}2} from "../${importFrom}"
+                 fileContent = `import {${importFrom}1,${importFrom}2} from "../${importFrom}/index.js"
 
                 export function ${letter}${i}() {
                 
@@ -73,7 +73,7 @@ function createStructure(numFiles, letters) {
         const indexPath = path.join(dirPath, 'index.js');
 
         // generate a barrel file here
-        const barrelContent = new Array(numFiles[letter]).fill(true).map((v,i) => `export * from './${letter}${i+1}';`).join('\n');
+        const barrelContent = new Array(numFiles[letter]).fill(true).map((v,i) => `export * from './${letter}${i+1}.js';`).join('\n');
         fs.writeFileSync(indexPath, barrelContent);
     });
 

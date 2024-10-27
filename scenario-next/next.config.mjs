@@ -6,18 +6,6 @@ const nextConfig = {
     //     return config; 
     // }
 
-    experimental: {
-        swcPlugins: [
-            [
-                "@swc/plugin-transform-imports",
-                {
-                  "lodash": {
-                    "transform": "lodash/{{member}}"
-                  }
-                }
-              ]
-        ],
-      },
 };
 
 export default nextConfig;

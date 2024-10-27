@@ -1,4 +1,4 @@
-import {a} from "./a.js";
+import {a1} from "./services/a/a1";
 
 
 function main() {
@@ -7,7 +7,7 @@ function main() {
     el.textContent="main";      
 
     document.getElementById("content").append(el)
-    a(); 
+    a1(); 
 }
 
 
