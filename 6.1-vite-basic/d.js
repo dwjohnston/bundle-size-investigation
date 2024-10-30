@@ -1,4 +1,4 @@
-
+import { debounce } from "lodash";
 
 
 export function d(){
@@ -9,6 +9,8 @@ export function d(){
 
 
     filler();
+
+    console.log(debounce);
 
 
     foo();
