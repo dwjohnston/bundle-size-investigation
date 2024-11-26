@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .dom-50kB {
+            width: 200px;
+            height: 200px; 
+            overflow: hidden;
+            display: inline-block;
+            margin: 1em;
+            border: dashed 1px black;
+        }
+    </style>
+
+<script type="importmap">
+    {
+      "imports": {
+        "a": "./a-1.js",
+        "b": "./b-1.js",
+        "c": "./c-1.js",
+        "d": "./d-1.js"
+
+      }
+    }
+</script>
+<link rel="modulepreload" href="./a-1.js" as="script" />
+<link rel="modulepreload" href="./b-1.js" as="script" />
+<link rel="modulepreload" href="./c-1.js" as="script" />
+<link rel="modulepreload" href="./d-1.js" as="script" />
+
+<script src="./script.js" type="module" ></script>
+
+
+
+</head>
+<body id="body">
+
+
+</body>
+</html>
