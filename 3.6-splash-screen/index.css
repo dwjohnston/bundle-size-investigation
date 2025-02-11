@@ -1,3 +1,7 @@
+.splash-screen {
+    display: none;
+}
+
 body {
     background-color: #004;
 }
