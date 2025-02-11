@@ -1,0 +1,23 @@
+{
+  "name": "utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate1MB.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ../6.4-bundlers-next/src/gen",
+    "generate:components": "npm run clean && tsx generateComponentsLinear.ts &&  tsx generateComponentsLinearWithMui.ts &&   tsx generateComponentsFunnelWithMui.ts && cp -r ./gen ../6.4-bundlers-next/src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.2.1"
+  }
+}
