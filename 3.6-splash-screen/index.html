@@ -21,44 +21,56 @@
             background-color: #004;
         }
 
-        @keyframes border-rotate {
-            0% {
-                background-position: 0% 50%;
-            }
-
+        @keyframes rotate {
             100% {
-                background-position: 200% 50%;
+                transform: rotate(1turn);
             }
         }
 
         .splash-screen {
-            display: block;
-            margin: 15em auto;
-            width: 400px;
-            height: 500px;
             position: relative;
-            padding: 10px 20px;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            color: white;
-            background-size: 200% 200%;
-            animation: border-rotate 4s linear infinite;
+            margin: 5em auto;
+            z-index: 0;
+            width: 400px;
+            height: 300px;
             border-radius: 10px;
-        }
+            overflow: hidden;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 72px;
 
-        .splash-screen::before {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border-radius: 15px;
-            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
-            background-size: 200% 200%;
-            z-index: -1;
-            animation: border-rotate 4s linear infinite;
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -2;
+                left: -50%;
+                top: -50%;
+                width: 200%;
+                height: 200%;
+                background-color: #399953;
+                background-repeat: no-repeat;
+                background-size: 50% 50%, 50% 50%;
+                background-position: 0 0, 100% 0;
+                background-image: linear-gradient(#2480b8, #aeb8c1), linear-gradient(#436b72, #cadde3);
+                animation: rotate 4s linear infinite;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                left: 6px;
+                top: 6px;
+                width: calc(100% - 12px);
+                height: calc(100% - 12px);
+                background-color: #004;
+
+                border-radius: 5px;
+            }
         }
     </style>
 
