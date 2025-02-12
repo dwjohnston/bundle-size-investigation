@@ -10,11 +10,11 @@ export default {
     clean: true,
   },
   plugins: [new HtmlWebpackPlugin()],
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      minSize: 20000,
-      maxSize: 50000,
-    },
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //     minSize: 20000,
+  //     maxSize: 50000,
+  //   },
+  // },
 };
