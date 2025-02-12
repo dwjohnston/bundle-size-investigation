@@ -1,38 +1,38 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {a1} from './servicesFunnel/a/a1'
+
+
+
+
+// import { A20 } from "./componentsLinear/a/a20";
+// import { B20 } from "./componentsLinear/b/b20";
+// import { C20 } from "./componentsLinear/c/c20";
+// import { D20 } from "./componentsLinear/d/d20";
+// import { E20 } from "./componentsLinear/e/e20";
+
+const A20 = lazy(() => import('./componentsLinear/a/a20'))
+const B20 = lazy(() => import('./componentsLinear/b/b20'))
+const C20 = lazy(() => import('./componentsLinear/c/c20'))
+const D20 = lazy(() => import('./componentsLinear/d/d20'))
+const E20 = lazy(() => import('./componentsLinear/e/e20'))
+
+
 
 function App() {
   const [count, setCount] = useState(0)
 
-  useEffect(() => {
-    a1();
-  }, []);
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <A20 />
+      <B20 />
+      <C20 />
+      <D20 />
+      <E20 />
+
     </>
   )
 }
